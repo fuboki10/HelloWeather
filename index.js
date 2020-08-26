@@ -41,7 +41,7 @@ $(() => {
                 temperatureDescription[0].innerHTML = description;
                 location[0].innerHTML = `${country}/${city}`;
 
-                weatherIcon.append(`<img src="http://openweathermap.org/img/wn/${icon}@2x.png"></img>`);
+                weatherIcon.append(`<img src="https://openweathermap.org/img/wn/${icon}@2x.png"></img>`);
             });
 
             // click listener
