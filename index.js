@@ -1,6 +1,9 @@
 const API_KEY = '3056be121e8647e4248094ac0a7cf18d';
 
 $(() => {
+    const temperatureDescription = $('.temperature-description');
+    const temperatureDegree = $('.temperature-degree');
+
     if ("geolocation" in navigator){ //check Geolocation available 
       navigator.geolocation.getCurrentPosition(position => {
           //console.log(position);
@@ -15,7 +18,11 @@ $(() => {
                 return res.json();
             })
             .then(data => {
-                console.log(data);
+                const temperature = data.main.temp;
+                const description = data.weather[0].description;
+
+                temperatureDegree[0].innerHTML = temperature;
+                temperatureDescription[0].innerHTML = description;
             });
       }); 
     } else{
